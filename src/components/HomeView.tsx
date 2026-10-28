@@ -530,7 +530,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   className="w-2 h-2 rounded-full shrink-0"
                   style={{ backgroundColor: CATEGORY_COLORS[cat].dot }}
                 />
-                <span className="text-[10px] font-semibold text-stone-600 dark:text-stone-300 tracking-wider">
+                <span className="text-xs font-semibold text-stone-600 dark:text-stone-300 tracking-wider">
                   {cat}
                 </span>
               </div>
@@ -552,7 +552,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     ? `Today’s Schedule • ${formatLongDate(activeScheduleDate)}`
                     : formatLongDate(activeScheduleDate)}
                 </h3>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 tabular-nums block truncate">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-stone-400 tabular-nums block truncate">
                   {selectedDayPosts.length} approved post{selectedDayPosts.length === 1 ? '' : 's'}
                   {selectedClientObj ? ` • ${selectedClientObj.name}` : ''}
                 </span>
@@ -613,7 +613,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                             style={{ backgroundColor: catStyle.dot }}
                           />
                           <span
-                            className="font-bold text-[9px] uppercase tracking-wider shrink-0"
+                            className="font-bold text-[11px] uppercase tracking-wider shrink-0"
                             style={{ color: catStyle.text }}
                           >
                             {post.category}

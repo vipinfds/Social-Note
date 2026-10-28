@@ -136,14 +136,14 @@ export const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
         {/* Brand header */}
         <div className="flex flex-col items-start px-2 pt-1">
           <BrandLogo size="lg" isDark={isDark} />
-          <p className="text-[10px] uppercase font-bold tracking-wider text-stone-400 mt-1">
+          <p className="text-[11px] uppercase font-bold tracking-wider text-stone-400 mt-1">
             Agency Content Studio
           </p>
           {subscription && (
             <button
               type="button"
               onClick={() => onSelectSubScreen('billing')}
-              className="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-[#C44D34]/10 text-[#C44D34] hover:bg-[#C44D34]/20 transition-colors cursor-pointer"
+              className="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-[#C44D34]/10 text-[#C44D34] hover:bg-[#C44D34]/20 transition-colors cursor-pointer"
             >
               <Sparkles className="w-3 h-3" />
               <span>
@@ -168,7 +168,7 @@ export const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
 
         {/* Section 1: Studio Core */}
         <div className="space-y-0.5 pt-1">
-          <p className="px-2.5 text-[10px] font-bold uppercase tracking-wider text-stone-400 dark:text-stone-500 mb-1">
+          <p className="px-2.5 text-[11px] font-bold uppercase tracking-wider text-stone-400 dark:text-stone-500 mb-1">
             Studio
           </p>
 
@@ -195,13 +195,13 @@ export const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
 
                 <div className="flex items-center gap-1">
                   {item.secondaryBadge && (
-                    <span className="px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-amber-500 text-white">
+                    <span className="px-1.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-500 text-white">
                       {item.secondaryBadge}
                     </span>
                   )}
                   {item.badge && (
                     <span
-                      className={`px-1.5 py-0.2 rounded-md text-[10px] font-bold ${
+                      className={`px-1.5 py-0.5 rounded-md text-[11px] font-bold ${
                         isActive
                           ? 'bg-white/20 text-white'
                           : isDark

@@ -43,10 +43,10 @@ export const StatusStageBadge: React.FC<StatusStageBadgeProps> = ({
 
   const sizeClasses =
     size === 'md'
-      ? 'px-2.5 py-1 text-[11px] gap-1.5 rounded-lg'
+      ? 'px-2.5 py-1 text-xs gap-1.5 rounded-lg font-semibold'
       : size === 'sm'
-      ? 'px-2 py-0.5 text-[10px] gap-1 rounded-md'
-      : 'px-1.5 py-0.5 text-[9px] gap-1 rounded-md';
+      ? 'px-2 py-0.5 text-xs gap-1 rounded-md font-semibold'
+      : 'px-2 py-0.5 text-[11px] leading-tight gap-1 rounded-md font-bold';
 
   const iconSize =
     size === 'md'

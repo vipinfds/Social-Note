@@ -7,9 +7,8 @@ interface BrandLogoProps {
 }
 
 /**
- * Official PostNote. brand wordmark logo
- * Matches the uploaded PostNote_logo_hires_transparent.png:
- * - Bold editorial serif "PostNote" in deep charcoal (#151B21 in light mode, #F8FAFC in dark mode)
+ * Official SocialNote. brand wordmark logo
+ * - Bold editorial serif "SocialNote" in deep charcoal (#151B21 in light mode, #F8FAFC in dark mode)
  * - Terracotta-red circular period dot (#B93822 / #C44D34) at the right baseline
  */
 export const BrandLogo: React.FC<BrandLogoProps> = ({
@@ -39,7 +38,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   return (
     <span
       className={`inline-flex items-baseline select-none leading-none tracking-[-0.025em] ${className}`}
-      aria-label="PostNote."
+      aria-label="SocialNote."
     >
       <span
         className={`font-serif font-black ${sizeStyles.text} ${
@@ -50,7 +49,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           fontWeight: 800,
         }}
       >
-        PostNote
+        SocialNote
       </span>
       <span
         className={`inline-block rounded-full bg-[#B93822] shrink-0 ${sizeStyles.dot}`}

@@ -26,12 +26,12 @@ export const PlatformLogo: React.FC<PlatformLogoProps> = ({
 
   const textDim =
     size === 'xs'
-      ? 'text-[10px]'
+      ? 'text-[11px]'
       : size === 'md'
       ? 'text-xs'
       : size === 'lg'
       ? 'text-sm'
-      : 'text-[11px]';
+      : 'text-xs';
 
   const renderSvgLogo = () => {
     const normalized = (platform || '').toLowerCase();
