@@ -1,0 +1,210 @@
+export type TabType = 'home' | 'clients' | 'content' | 'queue' | 'more';
+export type MainTab = TabType;
+
+export type MoreSubScreen =
+  | 'ideas'
+  | 'approvals'
+  | 'media'
+  | 'campaigns'
+  | 'analytics'
+  | 'settings'
+  | 'team'
+  | 'ai-assistants'
+  | 'billing';
+
+export type PlanTierId = 'free' | 'solo' | 'agency' | 'studio' | 'enterprise';
+export type BillingInterval = 'monthly' | 'annual';
+export type CurrencyCode = 'USD' | 'INR' | 'AED';
+
+export interface SubscriptionState {
+  planId: PlanTierId;
+  interval: BillingInterval;
+  currency: CurrencyCode;
+  isTrial: boolean;
+  trialDaysLeft: number;
+  isFoundingMember: boolean;
+  extraClients: number;
+  startedAt: string;
+  renewsAt: string;
+  paymentMethod?: string;
+  lastPaymentAmount?: number;
+}
+
+export type ThemeMode = 'light' | 'dark' | 'system';
+
+export type PostCategory =
+  | 'POST'
+  | 'TIPS'
+  | 'BEHIND THE SCENES'
+  | 'QUOTE'
+  | 'EDUCATE'
+  | 'ENGAGE'
+  | 'RELAX';
+
+export type PostStatus =
+  | 'Planned'
+  | 'In review'
+  | 'Approved'
+  | 'Scheduled';
+
+export type Platform =
+  | 'Instagram'
+  | 'Facebook'
+  | 'LinkedIn'
+  | 'Twitter'
+  | 'TikTok'
+  | 'YouTube'
+  | 'Other';
+
+export type PostPlatform = Platform;
+
+export interface ClientSocialLink {
+  platform: Platform;
+  url: string;
+  handle?: string;
+  label?: string;
+}
+
+export interface Client {
+  id: string;
+  name: string;
+  handle: string;
+  color: string;
+  notes?: string;
+  socialUrl?: string;
+  socialLinks?: ClientSocialLink[];
+  postsCount?: number;
+  createdAt?: string;
+}
+
+export type PostActivityType =
+  | 'created'
+  | 'edited'
+  | 'submitted_for_review'
+  | 'approved'
+  | 'changes_requested'
+  | 'comment'
+  | 'client_feedback';
+
+export interface PostActor {
+  name: string;
+  email: string;
+  role?: WorkspaceRole | string;
+}
+
+export interface PostActivityItem {
+  id: string;
+  type: PostActivityType;
+  actorName: string;
+  actorEmail: string;
+  actorRole?: WorkspaceRole | string;
+  timestamp: string;
+  comment?: string;
+  details?: string;
+}
+
+export interface StudioNotification {
+  id: string;
+  postId: string;
+  postTitle: string;
+  clientName: string;
+  type:
+    | 'changes_requested'
+    | 'submitted_for_review'
+    | 'approved'
+    | 'comment'
+    | 'client_feedback';
+  message: string;
+  comment?: string;
+  actorName: string;
+  actorEmail: string;
+  targetSummary: string;
+  createdAt: string;
+  read: boolean;
+}
+
+export interface Post {
+  id: string;
+  clientId: string;
+  clientName: string;
+  campaignId?: string;
+  campaign?: string;
+  date: string; // YYYY-MM-DD
+  status: PostStatus;
+  category: PostCategory;
+  platform: Platform;
+  title: string;
+  caption: string;
+  media?: MediaItem[];
+  mediaUrl?: string;
+  mediaType?: 'image' | 'video';
+  createdAt?: string;
+  createdBy?: PostActor;
+  submittedBy?: PostActor;
+  activityLog?: PostActivityItem[];
+}
+
+export interface Idea {
+  id: string;
+  clientId: string;
+  clientName: string;
+  category: PostCategory;
+  title: string;
+  description?: string;
+  createdAt?: string;
+}
+
+export interface MediaItem {
+  id: string;
+  title: string;
+  type: 'image' | 'video';
+  url?: string;
+  thumbnailUrl?: string;
+  duration?: string;
+  videoSrc?: string;
+  createdAt?: string;
+}
+
+export interface CampaignExternalLink {
+  label: string;
+  url: string;
+}
+
+export interface Campaign {
+  id: string;
+  name: string;
+  clientId?: string;
+  clientName?: string;
+  description?: string;
+  postsCount?: number;
+  metaAdLink?: string;
+  externalLinks?: CampaignExternalLink[];
+  startDate?: string;
+  endDate?: string;
+}
+
+export type WorkspaceRole = 'Owner' | 'Admin' | 'Manager' | 'Editor' | 'Viewer';
+
+export interface TeamMember {
+  id: string;
+  name?: string;
+  email: string;
+  role?: WorkspaceRole | string;
+  status: 'active' | 'invited';
+  avatar?: string;
+  initials?: string;
+  isYou?: boolean;
+  addedAt?: string;
+}
+
+export interface WorkspaceSummary {
+  id: string;
+  name: string;
+  ownerEmail: string;
+  ownerName: string;
+  myRole: WorkspaceRole;
+  isPersonal: boolean;
+  membersCount: number;
+  clientsCount: number;
+  postsCount: number;
+}
